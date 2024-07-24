@@ -250,3 +250,26 @@ body {
         text-align: center; /* Align text to the center */
       }
   }
+
+  /* Cart Icon and Quantity */
+.cart {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px; /* Adjust font size as needed */
+    color: #000; /* Adjust color as needed */
+    font-weight: bold; /* Optional, for better visibility */
+}
