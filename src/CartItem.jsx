@@ -14,20 +14,25 @@ const CartItem = ({ onContinueShopping }) => {
       const itemCost = parseFloat(item.cost.replace('$', ''));
       totalCost += item.cost * item.quantity;
     });
-    return totalCost;
+    return totalCost.toFixed(2);
   };
 
   const handleContinueShopping = (e) => {
-    alert('Functionality to be added');
+    e.preventDefault();
+    onContinueShopping(e);
   };
+
+  const handleCheckoutShopping = (e) => {
+    alert('Functionality to be added');
+  }
 
   const handleIncrement = (item) => {
     const updatedItem = {...item, quantity: item.quantity + 1};
-    dispatch(updateQuantity(updatedItem));
+    dispatch(updateQuantity(item));
   };
 
   const handleDecrement = (item) => {
-    if (item.quantity >= 1) {
+    if (item.quantity > 1) {
       const updatedItem = {...item, quantity: item.quantity - 1};
       dispatch(updateQuantity(updatedItem));
     } else {
